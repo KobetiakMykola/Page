@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "transform": "typescript-is/lib/transform-inline/transformer"
+      }
+    ],
+    "declaration": true,                   /* Generates corresponding '.d.ts' file. */
+    "sourceMap": true,                     /* Generates corresponding '.map' file. */
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "alwaysStrict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "ES6",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "src/types/*"
+      ]
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "outDir": "./built"
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
