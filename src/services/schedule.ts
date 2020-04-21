@@ -8,8 +8,8 @@
  * Dependencies
  */
 import * as I from '../dataBase/interfaces/schedule'
-import {pool} from "../dataBase/models";
-import {Schedule} from "../dataBase/models/Schedule";
+import {pool} from '../dataBase/models';
+import {Schedule} from '../dataBase/models/Schedule';
 
 /**
  * Return schedule

@@ -7,8 +7,8 @@
 /**
  * Dependencies
  */
-import {check} from "express-validator";
-import {pool} from "../dataBase/models";
+import {check} from 'express-validator';
+import {pool} from '../dataBase/models';
 import {validator} from './middleware'
 
 /**

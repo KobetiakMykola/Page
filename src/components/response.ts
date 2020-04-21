@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Project response
+ * Project response handlers
  */
 
 

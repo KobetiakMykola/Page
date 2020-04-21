@@ -8,12 +8,12 @@ import cors from 'cors';
 import methodOverride from 'method-override';
 import * as appConfig from './configs/config';
 import * as db  from './dataBase/models'
-import {sendError} from "./components/response";
+import {sendError} from './components/response';
 import createError from 'http-errors';
 import helmet from 'helmet'
 import passport from 'passport'
 import {mainRouter} from './routes/main'
-import morgan from "morgan";
+import morgan from 'morgan';
 const app = express();
 const server = http.createServer(app);
 

@@ -9,10 +9,10 @@
  */
 import {validationResult} from 'express-validator';
 import createError from 'http-errors';
-import {sendError} from "./response";
-import jwt from "jsonwebtoken";
-import {config} from "../configs/config";
-import {pool} from "../dataBase/models";
+import {sendError} from './response';
+import jwt from 'jsonwebtoken';
+import {config} from '../configs/config';
+import {pool} from '../dataBase/models';
 
 /**
  * Attaches current user to request
@@ -73,6 +73,6 @@ export function checkUserRole(roles: [string]) {
         const role = req.user.role;
 
         if (roles.includes(role)) return next();
-        else return sendError(createError(403, "User not authorized to perform this action"), res)
+        else return sendError(createError(403, 'User not authorized to perform this action'), res)
     };
 }
