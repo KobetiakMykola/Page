@@ -42,9 +42,9 @@ export async function attachUserToRequest(req: any, res: Response, next: any): P
  */
 export function checkAuthorization(req: any, res: any, next: any): void {
     const token: string = req.header('Authorization');
-    jwt.verify(token, config.jwt.secret, (err: any) => {
+    jwt.verify(token, config.jwt.secret, (err) => {
         if (err) {
-            return next(sendError(createError(401, 'Unauthorized'), res))
+            return sendError(createError(401, err), res);
         } else {
             return next()
         }
@@ -70,7 +70,7 @@ export function validator(req: any, res: any, next: any) {
  */
 export function checkUserRole(roles: [string]) {
     return function (req: any, res: any, next: any) {
-        const role = req.user.role;
+        const role: string = req.user.role;
 
         if (roles.includes(role)) return next();
         else return sendError(createError(403, 'User not authorized to perform this action'), res)

@@ -23,7 +23,7 @@ export function signin(req: Request, res: Response) {
         const error = err || info;
         if (error) return sendError(createError(422, error), res);
 
-        const token: string = jwt.sign(user, config.jwt.secret);
+        const token: string = jwt.sign(user, config.jwt.secret, { expiresIn: '30d' });
 
         return sendResponse(200, res)(null, {token: token, userId: user.id});
 
